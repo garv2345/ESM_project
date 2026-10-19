@@ -3,12 +3,13 @@ import TaskCard from './TaskCard'
 import Header from '../Header'
 import TaskList from './TaskList'
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({data}) => {
+    console.log(data)
     return (
         <div>
-            <Header />
-            <TaskCard />
-            <TaskList />
+            <Header name={data.name} />
+            <TaskCard taskNumber={data.taskNumbers} />
+            <TaskList list={data.tasks}/>
         </div>
     )
 }

@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AuthContext } from '../../Context/AuthProvider';
 
-const Login = () => {
+
+const Login = ({userHandler}) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(email, pass);
+    userHandler(email,pass);
+    setEmail("")
+    setPass("")
   }
+  
+
   return (
     <div className='flex items-center justify-center w-full h-screen scroll overflow-hidden bg-mist-950 text-white  '>
       <div className='border-cyan-400 rounded-2xl border-1'>
